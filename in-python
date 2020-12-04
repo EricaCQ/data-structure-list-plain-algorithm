@@ -1,0 +1,44 @@
+# Exercício 2
+ 
+
+class No():
+
+    def __init__(self, valor, proximo=None):
+        self.valor = valor
+        self.proximo = proximo
+
+####################
+
+class ListaEncadeada():
+
+    def __init__(self):
+        self.inicio = None
+
+
+    def insere(self, valor):
+        no = No(valor)
+
+        no.proximo = self.inicio
+        self.inicio = no
+
+
+    def valores(self):
+        aux = self.inicio
+
+
+#Cria objeto lista que é do tipo ListaEncadeada# 
+lista = ListaEncadeada()
+#insere valores na lista através do método insere
+lista.insere("l")
+lista.insere("m")
+lista.insere("n")
+lista.insere("o")
+print("Aeronaves na pista", lista.valores())
+
+#Autoriza o primeiro avião
+lista.pop("l")
+print("A Aeronave L já está no ar, câmbio.")
+
+#Insere mais um avião na lista de espera
+lista.insere("p")
+print("Aeronave p aguardando na pista")
